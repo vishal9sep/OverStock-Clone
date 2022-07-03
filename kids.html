@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/common.css" />
+    <script
+      src="https://kit.fontawesome.com/e9a5a74c45.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      body {
+        background-color: white;
+      }
+      #furniture {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto;
+        /* border: 1px solid red; */
+        gap: 15px;
+        width: 97%;
+        margin: auto;
+      }
+      h3 {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      #furniture img {
+        width: 100%;
+        margin: 0px;
+      }
+      #furniture > div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+      #furniture p {
+        text-align: center;
+        background-color: #f5f6f7;
+        color: #2f3337;
+        margin: 0px;
+        padding: 10px 0px;
+        box-sizing: border-box;
+      }
+      #Tips {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        /* border: 1px solid red; */
+        gap: 15px;
+        width: 97%;
+        margin: auto;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      #Tips h3 {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        padding: 10;
+        font-size: 20px;
+      }
+
+      #Tips p {
+        font-size: 14px;
+        line-height: 21px;
+        padding: 8px;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      }
+      button {
+        margin-top: 24px;
+        align-items: center;
+        background-color: white;
+        color: #2f3337;
+        display: inline-flex;
+        height: 44px;
+        justify-content: center;
+        width: auto;
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #2f3337;
+      }
+      .kidsfont {
+        font-size: 14px;
+        color: #545658;
+        font-weight: 300;
+        margin-bottom: 30px;
+        padding: 20px;
+      }
+      .kidsbox {
+        font-size: 14px;
+        color: #545658;
+        font-weight: 300;
+        padding: 20px;
+        display: flex;
+        /* border: 1px solid red; */
+        width: 97%;
+        margin: auto;
+        padding: 10px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="head">
+      <header>
+        <svg height="32" width="181" color="#FF1F2C" viewBox="0 0 164 29">
+          <g fill="none" fill-rule="evenodd">
+            <g fill="#000">
+              <path
+                d="M164 23.126h-.274v-1.96h-.01l-.764 1.96h-.178l-.763-1.96H162v1.96h-.275v-2.188h.506l.631 1.617h.01l.622-1.617H164v2.188zm-2.684-1.98h-.705v1.98h-.274v-1.98h-.705v-.208h1.684v.208zM34.58 14.78c0 3.558 1.94 7.117 5.855 7.117 3.914 0 5.855-3.559 5.855-7.118 0-3.558-1.94-7.117-5.855-7.117-3.915 0-5.856 3.559-5.856 7.117m13.75 0c0 4.788-2.783 8.833-7.894 8.833-5.112 0-7.894-4.045-7.894-8.833s2.782-8.831 7.894-8.831c5.111 0 7.894 4.043 7.894 8.831M47.965 6.433h2.264l5.241 14.655h.065l5.176-14.655h2.103L56.57 23.126h-2.167zM75.506 13.615C75.409 10.54 73.5 7.662 70.2 7.662c-3.332 0-5.176 2.912-5.5 5.953h10.806zM64.7 15.329c.032 2.977 1.585 6.568 5.5 6.568 2.977 0 4.594-1.747 5.24-4.27h2.04c-.874 3.785-3.074 5.984-7.28 5.984-5.306 0-7.538-4.076-7.538-8.832 0-4.4 2.232-8.831 7.538-8.831 5.37 0 7.506 4.69 7.344 9.381H64.7zM98.486 11.318c-.097-2.524-2.038-3.656-4.367-3.656-1.812 0-3.947.712-3.947 2.88 0 1.811 2.07 2.458 3.462 2.814l2.717.615c2.33.355 4.756 1.714 4.756 4.626 0 3.623-3.591 5.015-6.697 5.015-3.883 0-6.535-1.812-6.859-5.889h2.039c.162 2.75 2.2 4.174 4.917 4.174 1.91 0 4.562-.841 4.562-3.17 0-1.941-1.812-2.589-3.656-3.042l-2.62-.582c-2.653-.712-4.66-1.618-4.66-4.465 0-3.397 3.333-4.69 6.277-4.69 3.332 0 5.985 1.747 6.114 5.37h-2.038zM106.109 6.433h3.397v1.714h-3.397v11.259c0 1.326.194 2.103 1.65 2.2.582 0 1.165-.033 1.747-.097v1.747c-.615 0-1.197.064-1.812.064-2.718 0-3.656-.905-3.623-3.752V8.148h-1.973V6.432h1.973V1.419h2.038v5.014zM111.924 14.78c0 3.558 1.941 7.117 5.856 7.117s5.856-3.559 5.856-7.118c0-3.558-1.941-7.117-5.856-7.117s-5.856 3.559-5.856 7.117m13.75 0c0 4.788-2.783 8.833-7.894 8.833-5.111 0-7.894-4.045-7.894-8.833s2.783-8.831 7.894-8.831c5.111 0 7.894 4.043 7.894 8.831M140.117 11.674c-.55-2.491-2.07-4.012-4.723-4.012-3.915 0-5.856 3.559-5.856 7.117 0 3.56 1.94 7.118 5.856 7.118 2.523 0 4.594-1.974 4.852-4.756h2.038c-.55 4.012-3.17 6.47-6.89 6.47-5.112 0-7.894-4.043-7.894-8.832 0-4.788 2.782-8.832 7.894-8.832 3.559 0 6.308 1.91 6.761 5.727h-2.038zM144.425.027h2.038v14.494l9.253-8.088h2.717l-7.117 6.179 7.603 10.514h-2.556l-6.6-9.09-3.3 2.75v6.34h-2.038zM87.083 6.28c-2.342.324-4.105 1.796-4.981 4.067h-.065V6.433H80.16v16.693H82.2V14.23c0-3.03 1.931-5.488 4.884-5.926V6.28z"
+              ></path>
+            </g>
+            <g fill="#FF1F2C">
+              <path
+                d="M.666.06v14.66C2.828 8.896 8.816 4.443 14.9 4.443c6.74 0 11.04 5.464 9.609 12.202-1.105 5.195-5.295 9.628-10.243 11.388h14.374V.061H.666z"
+              ></path>
+              <path
+                d="M20.04 16.645c0-5.824-3.463-10.547-7.734-10.547s-7.734 4.723-7.734 10.547c0 5.825 3.463 10.547 7.734 10.547s7.734-4.722 7.734-10.547"
+              ></path>
+            </g>
+          </g>
+        </svg>
+        <div id="search">
+          <input type="text" placeholder="Search" />
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        </div>
+        <div id="user-account">
+          <i class="fa-regular fa-user user-icon"></i>
+          <p>Account</p>
+          <div id="tooltip">
+            <ul>
+              <li class="fullWidth">
+                <h2>
+                  Sign In
+                  <i class="fa-solid fa-chevron-right"></i>
+                </h2>
+              </li>
+
+              <li>View your account and check your order status.</li>
+            </ul>
+            <ul>
+              <li class="fullWidth">
+                <h2>
+                  Create An Account
+                  <i class="fa-solid fa-chevron-right"></i>
+                </h2>
+              </li>
+              <li>Track orders, save items to lists and more!</li>
+            </ul>
+            <ul>
+              <li>My Account</li>
+              <li>My Order</li>
+              <li>My Reviews</li>
+              <li>Help</li>
+            </ul>
+          </div>
+        </div>
+        <div id="user-list">
+          <i class="fa-regular fa-heart user-icon"></i>
+          <p>List</p>
+          <div id="tooltip">
+            <ul>
+              <li>Favourites</li>
+              <li>Save for Later</li>
+            </ul>
+            <ul>
+              <li>View All My Lists</li>
+              <li>Find My List</li>
+            </ul>
+          </div>
+        </div>
+        <div id="user-cart">
+          <i class="fa-solid fa-cart-shopping user-icon"></i>
+          <p>Cart</p>
+        </div>
+      </header>
+      <nav>
+        <ul>
+          <li>Furniture</li>
+          <li>Rugs</li>
+          <li>Decor</li>
+          <li>Bed & Bath</li>
+          <li>Home Improvement</li>
+          <li>Kitchen</li>
+          <li>Outdoor</li>
+          <li>Jewelry</li>
+          <li>Lighting</li>
+          <li>Kids & Baby</li>
+          <li>More</li>
+        </ul>
+        <div id="breakLine"></div>
+        <ul>
+          <li>Ideas</li>
+          <li class="crimson">Sales & Deals</li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- kids -->
+    <h3 class="kds">Kids</h3>
+    <div id="furniture">
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/17960745/Avenue-Greene-Nola-Mocha-Triple-Bunk-Bed-8637f807-600a-4eaa-88cc-29a8452e6ac5.jpg?imWidth=320&impolicy=medium"
+          alt=""
+        />
+        <p>Kids Beds</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/22528931/Dinoland-Comforter-Set-83f44770-372f-49cb-bffc-c64e66848a0c.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Kids Comforter Sets</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/16600895/Safavieh-Kids-Transitional-Geometric-Hand-Tufted-Wool-Grey-Ivory-Area-Rug-5-x-7-d9e43075-b79e-4e75-9039-0fb08f8defb8.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Kids Rugs & Decor</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/13992332/Riley-Modular-Stacking-Storage-Bins-by-iNSPIRE-Q-Junior-beca1d26-61ea-4471-a5c8-4660aa655979.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Kids Storage</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/15389741/Marilyn-Faux-Fur-2.75-ft.-Lounge-Beanbag-Chair-by-Christopher-Knight-Home-4968df0c-03d9-4d94-a115-5c7aedcab0e5.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Bean Bags</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/13213081/Simple-Living-Hayden-Kids-Table-and-Chair-Set-a1adabe3-9a48-40f6-939c-618c07573eb7.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Shop All kids & Toddler Furniture</p>
+      </div>
+    </div>
+    <!-- New div  -->
+    <h3 class="kds">Baby</h3>
+    <div id="furniture">
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/18235968/Avenue-Greene-Ollie-Natural-4-in-1-Convertible-Crib-4e088cf9-2381-44b1-9d6d-6039ac6c8ffe.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Nursery Furniture</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/13935993/My-Baby-Sam-Rosebud-Lane-3-piece-Crib-Bedding-Set-58b3724f-3173-47e5-ba72-12bba506e82b.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Baby Crib Bedding</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/14229835/RiverRidge-Kids-3-Cubby-2-Veggie-Bin-Floor-Cabinet-023b33d6-8742-4d44-9ac4-8846c73b07aa_1000.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Storage & Organization</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/13471036/Pearcy-Velvet-Sheep-Ottoman-by-Christopher-Knight-Home-2ea51162-ed0d-475d-86e4-2e0f45c4f095_1000.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Gliders & Ottomans</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/9489586/Lush-Decor-Riley-Window-Curtain-Panel-5c1afdc3-be18-4d04-af17-588a9d616ca4.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Nursery Decor</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/10914974/Baxton-Studio-Agatha-Mid-century-Modern-Light-Beige-Fabric-Upholstered-Button-tufted-Rocking-Chair-cb066623-c0cc-4a18-bc19-4abee3f409fe.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Shop All Baby & Nursery</p>
+      </div>
+    </div>
+
+    <!-- New row -->
+    <h3 class="kds">Top Rated Products</h3>
+    <div id="furniture">
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/23386113/South-Shore-Cotton-Candy-Baby-Crib-4-Heights-with-Toddler-Rail-661e98e7-c8c6-45e6-a5bc-deb9b3286f82.jpg?imWidth=320&impolicy=medium"
+          alt=""
+        />
+        <p>Cribs</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/20186914/Avenue-Green-Randall-Wood-Twin-over-Full-Bunk-Bed-6a7420ea-c190-4381-bd0a-d19ad529b1eb.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Kids Beds</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/11405611/Aveline-8-inch-Gel-Infused-Memory-Foam-Twin-size-Mattress-ae2715ca-2f47-41b8-a7f0-06bfb6789055.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Kds Mattresses</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/11454272/Intelligent-Design-Mona-Comforter-Set-1856d343-23fd-4a01-8f00-215fc4e9187f.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Kids Bedding</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/10023530/KidKraft-Activity-Play-Table-81a63c93-c8ba-49cf-816b-164381bb612b.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Toys</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/is/images/direct/331869e95079f3f94e836fbdf624ef708330c8e6/Taylor-%26-Olive-Tuscaloosa-Handmade-Wool-Trellis-Area-Rug.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Kids Rugs & Decor</p>
+      </div>
+    </div>
+    <!-- kids Outdorr -->
+
+    <h3 class="kds">Kids Outdoor</h3>
+    <div id="furniture">
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/6800086/Backyard-Discovery-Montpelier-All-Cedar-Swing-Set-81674fb4-faea-4b37-954c-a65a3b6bcea0.jpg?imWidth=320&impolicy=medium"
+          alt=""
+        />
+        <p>Swings Sets</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/14626826/Skywalker-Trampolines-Green-12-Round-Trampoline-with-Enclosure-1d34285c-cdc3-48b0-8d7d-dfeb7b7555f4.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Trampolines</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/10763382/Backyard-Discovery-Timberlake-All-Cedar-Playhouse-dd8c7ac9-0886-4929-a2f5-9d8873a1c7f8.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Playhouses</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/21134353/Intex-Mystic-Unicorn-Spray-Pool-72871ac0-75d3-4da2-8800-9ca988eca9bd.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Water Toys</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/18066059/Double-Chaise-Lounger-Navy-and-White-Stripes-09f78287-b52f-4eec-aa28-bb798a351803.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Kids Outdoor Furniture</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/5314750/Lifetime-Ace-Flyer-Multi-color-Airplane-Outdoor-Teeter-totter-795059ae-ba44-4dcf-98f5-1fc6de323442.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Shop All Outdoor Play</p>
+      </div>
+    </div>
+
+    <!-- Tips & Inspirations -->
+
+    <h3 class="kds">Tips & Inspirations</h3>
+    <div id="furniture">
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/14427935/Giselle-II-Metal-Bed-iNSPIRE-Q-Modern-12405934-e72c-491c-8f51-8ce670324241.jpg?imWidth=320&impolicy=medium"
+          alt=""
+        />
+        <p>Shops by Kids Room</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/10001948/Kolcraft-3-drawer-Transitional-Dresser-c175841e-1afd-41e2-bacc-40353a80d0f4.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Shop by Nursery</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/22731827/Mohawk-Home-Prismatic-States-Map-Area-Rug-5x-8-5e225e7f-6b3e-4252-ab4f-9d28a141c347.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Playroom Ideas</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/13253016/South-Shore-Savannah-39-inch-3-drawer-Laminated-Twin-Bed-Set-3b24684a-40ab-4015-ae21-d8bc83ca4ab9.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>How to Buy Kids Furniture</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/19843554/Carters-LILY-3pc-Crib-Set-5d47279d-fd66-49e4-84b4-c7bd16f5d7fc.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>Newborn Baby Essentials</p>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/images/products/17403487/Urban-Playground-Heart-5-piece-Quilt-Set-097a7540-fbc9-43c2-b9c2-67c7e130beed.jpg?imWidth=320&impolicy=medium"
+        />
+        <p>How to Find Cute Girls Bedding</p>
+      </div>
+    </div>
+    <!-- font -->
+    <div class="kidsfont">
+      <p>About Kids at Overstock™</p>
+      <br />
+      <p>
+        Make Overstock your first stop for kids’ furniture and nursery decor.
+        Save big on every stage of childhood when you decorate your child’s
+        bedroom with kids’ beds, comforter sets, and mattresses from Overstock.
+        Or give your playroom a style boost with comfy rugs and bean bags. We
+        sell toys for every age, as well as kids’ storage to keep them
+        organized. And from swing sets to trampolines, shop outdoor play for an
+        affordable way to entertain your children. If you have a new child on
+        the way, get yourself fully prepared with baby furniture, such as cribs
+        and gliders. At Overstock, enjoy huge savings on everything you need for
+        your little ones.
+      </p>
+      <br /><br />
+      <h3>Kids Buying Guides</h3>
+      <p>
+        When it comes to your kids, you want everything to be perfect. Our
+        guides will make everything from bringing baby home to creating the
+        perfect spot for playtime easy as 1, 2, 3.
+      </p>
+      <br /><br />
+    </div>
+    <!-- last div -->
+    <div class="kidsbox">
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/img/mxc/BabyNurseryIdeas6_29_2017seo.jpg?imWidth=200&impolicy=medium"
+        />
+        <p>
+          Use these nursery ideas as inspiration to create an adorable space for
+          your little one.
+        </p>
+        <button>Read More</button>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/img/mxc/NewbornBabyEssentials6_29_2017seo.jpg?imWidth=200&impolicy=medium"
+        />
+        <p>
+          Dsciver which baby essentials you need to be prepared for your baby
+          arrival.
+        </p>
+        <button>Read More</button>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/img/mxc/Playroomideas6_29_2017seo.jpg?imWidth=200&impolicy=medium"
+        />
+        <p>
+          Create a special place for your child to play, explore, learn and most
+          of all have fun.
+        </p>
+        <button>Read More</button>
+      </div>
+      <div>
+        <img
+          src="https://ak1.ostkcdn.com/img/mxc/04192018_SP_Kids_Store_BG4.jpg?imWidth=200&impolicy=medium"
+        />
+        <p>
+          Creare the comfort zone that every child needs with quality kids
+          furniture for your home.
+        </p>
+        <button>Read More</button>
+      </div>
+      <br /><br />
+    </div>
+
+    <footer>
+      <div id="footlinks">
+        <ul>
+          <li><h2>MY ACCOUNT</h2></li>
+          <li>Orders & Returns</li>
+          <li>Email Preferences</li>
+          <li>Account Settings</li>
+        </ul>
+        <ul>
+          <li><h2>LET US HELP</h2></li>
+          <li>Customer Care</li>
+          <li>Shipping Information</li>
+          <li>Return Policy</li>
+          <li>International Help</li>
+          <li>Accessibility</li>
+        </ul>
+        <ul>
+          <li><h2>COMPANY INFORMATION</h2></li>
+          <li>About Overstock™</li>
+          <li>Contact Us</li>
+          <li>Careers</li>
+          <li>Investors Relations</li>
+          <li>Sell Your Products</li>
+          <li>Supply Chain Transparency</li>
+        </ul>
+        <ul>
+          <li><h2>MORE WAYS TO HELP</h2></li>
+          <li>Tips & Ideas</li>
+          <li>Deals</li>
+          <li>Clearance</li>
+          <li>New Arrivals</li>
+        </ul>
+      </div>
+      <div id="endCredits">
+        <div id="address">
+          <p>© Copyright 2022, Overstock.com®, Inc.</p>
+          <p>799 Coliseum Way Midvale, UT 84047 | 1-800-843-2446</p>
+        </div>
+        <div id="additionalLinks">
+          <ul>
+            <li>Privacy Policy</li>
+            <li>Terms & Conditions</li>
+            <li>*Promotion Terms</li>
+            <li>
+              Ship To:
+              <img
+                src="https://ak1.ostkcdn.com/img/mxc/intFlag_IN.gif"
+                alt=""
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+<script src="./script/common.js"></script>

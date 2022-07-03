@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Furniture</title>
+    <script
+      src="https://kit.fontawesome.com/e9a5a74c45.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <link rel="stylesheet" href="./style/navContainer.css" />
+
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+    #furniture {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+      /* border: 1px solid red; */
+      gap: 15px;
+      width: 97%;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    #furniture img {
+      width: 100%;
+      margin: 0px;
+    }
+    #furniture > div {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    #furniture p {
+      text-align: center;
+      background-color: #f5f6f7;
+      color: #2f3337;
+      margin: 0px;
+      padding: 10px 0px;
+      box-sizing: border-box;
+    }
+    #Tips {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      /* border: 1px solid red; */
+      gap: 15px;
+      width: 97%;
+      margin: auto;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    #Tips h3 {
+      margin-bottom: 20px;
+      margin-top: 20px;
+      padding: 10;
+      font-size: 20px;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    }
+
+    #Tips p {
+      font-size: 14px;
+      line-height: 21px;
+      padding: 8px;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    }
+    button {
+      margin-top: 24px;
+      align-items: center;
+      background-color: white;
+      color: #2f3337;
+      display: inline-flex;
+      height: 44px;
+      justify-content: center;
+      width: auto;
+      padding: 15px;
+      border-radius: 5px;
+    }
+  </style>
+  <body>
+    <div id="head">
+      <!-- Nav Bar  -->
+    <header>
+      <svg height="32" width="181" color="#FF1F2C" viewBox="0 0 164 29">
+        <g fill="none" fill-rule="evenodd">
+          <g fill="#000">
+            <path
+              d="M164 23.126h-.274v-1.96h-.01l-.764 1.96h-.178l-.763-1.96H162v1.96h-.275v-2.188h.506l.631 1.617h.01l.622-1.617H164v2.188zm-2.684-1.98h-.705v1.98h-.274v-1.98h-.705v-.208h1.684v.208zM34.58 14.78c0 3.558 1.94 7.117 5.855 7.117 3.914 0 5.855-3.559 5.855-7.118 0-3.558-1.94-7.117-5.855-7.117-3.915 0-5.856 3.559-5.856 7.117m13.75 0c0 4.788-2.783 8.833-7.894 8.833-5.112 0-7.894-4.045-7.894-8.833s2.782-8.831 7.894-8.831c5.111 0 7.894 4.043 7.894 8.831M47.965 6.433h2.264l5.241 14.655h.065l5.176-14.655h2.103L56.57 23.126h-2.167zM75.506 13.615C75.409 10.54 73.5 7.662 70.2 7.662c-3.332 0-5.176 2.912-5.5 5.953h10.806zM64.7 15.329c.032 2.977 1.585 6.568 5.5 6.568 2.977 0 4.594-1.747 5.24-4.27h2.04c-.874 3.785-3.074 5.984-7.28 5.984-5.306 0-7.538-4.076-7.538-8.832 0-4.4 2.232-8.831 7.538-8.831 5.37 0 7.506 4.69 7.344 9.381H64.7zM98.486 11.318c-.097-2.524-2.038-3.656-4.367-3.656-1.812 0-3.947.712-3.947 2.88 0 1.811 2.07 2.458 3.462 2.814l2.717.615c2.33.355 4.756 1.714 4.756 4.626 0 3.623-3.591 5.015-6.697 5.015-3.883 0-6.535-1.812-6.859-5.889h2.039c.162 2.75 2.2 4.174 4.917 4.174 1.91 0 4.562-.841 4.562-3.17 0-1.941-1.812-2.589-3.656-3.042l-2.62-.582c-2.653-.712-4.66-1.618-4.66-4.465 0-3.397 3.333-4.69 6.277-4.69 3.332 0 5.985 1.747 6.114 5.37h-2.038zM106.109 6.433h3.397v1.714h-3.397v11.259c0 1.326.194 2.103 1.65 2.2.582 0 1.165-.033 1.747-.097v1.747c-.615 0-1.197.064-1.812.064-2.718 0-3.656-.905-3.623-3.752V8.148h-1.973V6.432h1.973V1.419h2.038v5.014zM111.924 14.78c0 3.558 1.941 7.117 5.856 7.117s5.856-3.559 5.856-7.118c0-3.558-1.941-7.117-5.856-7.117s-5.856 3.559-5.856 7.117m13.75 0c0 4.788-2.783 8.833-7.894 8.833-5.111 0-7.894-4.045-7.894-8.833s2.783-8.831 7.894-8.831c5.111 0 7.894 4.043 7.894 8.831M140.117 11.674c-.55-2.491-2.07-4.012-4.723-4.012-3.915 0-5.856 3.559-5.856 7.117 0 3.56 1.94 7.118 5.856 7.118 2.523 0 4.594-1.974 4.852-4.756h2.038c-.55 4.012-3.17 6.47-6.89 6.47-5.112 0-7.894-4.043-7.894-8.832 0-4.788 2.782-8.832 7.894-8.832 3.559 0 6.308 1.91 6.761 5.727h-2.038zM144.425.027h2.038v14.494l9.253-8.088h2.717l-7.117 6.179 7.603 10.514h-2.556l-6.6-9.09-3.3 2.75v6.34h-2.038zM87.083 6.28c-2.342.324-4.105 1.796-4.981 4.067h-.065V6.433H80.16v16.693H82.2V14.23c0-3.03 1.931-5.488 4.884-5.926V6.28z"
+            ></path>
+          </g>
+          <g fill="#FF1F2C">
+            <path
+              d="M.666.06v14.66C2.828 8.896 8.816 4.443 14.9 4.443c6.74 0 11.04 5.464 9.609 12.202-1.105 5.195-5.295 9.628-10.243 11.388h14.374V.061H.666z"
+            ></path>
+            <path
+              d="M20.04 16.645c0-5.824-3.463-10.547-7.734-10.547s-7.734 4.723-7.734 10.547c0 5.825 3.463 10.547 7.734 10.547s7.734-4.722 7.734-10.547"
+            ></path>
+          </g>
+        </g>
+      </svg>
+      <div id="search">
+        <input type="text" placeholder="Search" />
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      </div>
+      <div id="user-account">
+        <i class="fa-regular fa-user user-icon"></i>
+        <p>Account</p>
+        <div id="tooltip">
+          <ul>
+            <li class="fullWidth">
+              <h2>
+                Sign In
+                <i class="fa-solid fa-chevron-right"></i>
+              </h2>
+            </li>
+
+            <li>View your account and check your order status.</li>
+          </ul>
+          <ul>
+            <li class="fullWidth">
+              <h2>
+                Create An Account
+                <i class="fa-solid fa-chevron-right"></i>
+              </h2>
+            </li>
+            <li>Track orders, save items to lists and more!</li>
+          </ul>
+          <ul>
+            <li>My Account</li>
+            <li>My Order</li>
+            <li>My Reviews</li>
+            <li>Help</li>
+          </ul>
+        </div>
+      </div>
+      <div id="user-list">
+        <i class="fa-regular fa-heart user-icon"></i>
+        <p>List</p>
+        <div id="tooltip">
+          <ul>
+            <li>Favourites</li>
+            <li>Save for Later</li>
+          </ul>
+          <ul>
+            <li>View All My Lists</li>
+            <li>Find My List</li>
+          </ul>
+        </div>
+      </div>
+      <div id="user-cart">
+        <i class="fa-solid fa-cart-shopping user-icon"></i>
+        <p>Cart</p>
+      </div>
+    </header>
+    <!-- This is nav Bar  -->
+    <nav>
+      <ul>
+        <li>Furniture</li>
+        <li>Rugs</li>
+        <li>Decor</li>
+        <li>Bed & Bath</li>
+        <li>Home Improvement</li>
+        <li>Kitchen</li>
+        <li>Outdoor</li>
+        <li>Jewelry</li>
+        <li>Lighting</li>
+        <li>Kids & Baby</li>
+        <li>More</li>
+      </ul>
+      <div id="breakLine"></div>
+      <ul>
+        <li>Ideas</li>
+        <li class="crimson">Sales & Deals</li>
+      </ul>
+    </nav>
+    </div>
+    
+    <div id="main_content">
+      <div id="heading"><h1>Furniture</h1></div>
+      <div id="mid_container">
+        <div class="box1">
+          <h2>Featured Categories</h2>
+
+          <p>Living Room Furniture</p>
+          <p>Dining Room Furniture</p>
+          <p>Bedroom Furniture</p>
+          <p>Patio Furniture</p>
+          <p>Kitchen Furniture</p>
+          <p>Entryway Furniture</p>
+          <p>Home Office Furniture</p>
+          <p>Small Space Furniture</p>
+          <p>Bathroom Furniture</p>
+          <p>Mattresses</p>
+          <p>Recreation Room</p>
+          <p>Kids & Toddler Furniture</p>
+          <p>Home Gym</p>
+          <p class="lastPred">Shop All Furniture on Sale</p>
+        </div>
+        <div id="box2">
+          <img
+            src="https://ak1.ostkcdn.com/img/mxc/03242022_SPRING2022_FURNI_Hero_Desktop.jpg?imwidth=680&impolicy=medium?imwidth=750"
+            alt=""
+          />
+        </div>
+        <div>
+          <!-- box3 -->
+        </div>
+        <div class="box4">
+          <div class="bgc_div">
+            <p class="lowText noHover">Shop All</p>
+            <p class="boldText noHover">Area Rugs</p>
+            <img
+              class="miniImage"
+              src="https://ak1.ostkcdn.com/img/mxc/12202021_WINTER2022_RUGS_MM_01.png?imwidth=320&impolicy=medium?imwidth=384"
+              alt=""
+            />
+          </div>
+          <div class="bgc_div">
+            <img
+              class="miniImage"
+              src="https://ak1.ostkcdn.com/img/mxc/12202021_WINTER2022_RUGS_MM_02.png?imwidth=320&impolicy=medium?imwidth=384"
+              alt=""
+            />
+            <p class="lowText noHover">Save On</p>
+            <p class="boldText noHover">Rug Deals</p>
+          </div>
+        </div>
+      </div>
+      <h2>Popular Furniture Categories</h2>
+      <div id="furniture">
+        <div>
+          <img
+            src="https://ak1.ostkcdn.com/img/mxc/03242022_SPRING2022_FURNI_PopCat_1.jpg?imwidth=400&impolicy=medium"
+            alt=""
+          />
+          <p>Patio Furniture</p>
+        </div>
+        <div>
+          <img
+            src="https://ak1.ostkcdn.com/img/mxc/03242022_SPRING2022_FURNI_PopCat_2.jpg?imwidth=400&impolicy=medium"
+          />
+          <p>Living Room Furniture</p>
+        </div>
+        <div>
+          <img
+            src="https://ak1.ostkcdn.com/img/mxc/03242022_SPRING2022_FURNI_PopCat_3.jpg?imwidth=400&impolicy=medium"
+          />
+          <p>Dining Room Furniture</p>
+        </div>
+        <div>
+          <img
+            src="https://ak1.ostkcdn.com/img/mxc/03242022_SPRING2022_FURNI_PopCat_4.jpg?imwidth=400&impolicy=medium"
+          />
+          <p>Bedroom Furniture</p>
+        </div>
+        <div>
+          <img
+            src="https://ak1.ostkcdn.com/img/mxc/09062021_FALL2021_Furni_PopCat_10.jpg?imwidth=400&impolicy=medium"
+          />
+          <p>Mattresses</p>
+        </div>
+        <div>
+          <img
+            src="https://ak1.ostkcdn.com/img/mxc/03242022_SPRING2022_FURNI_PopCat_6.jpg?imwidth=400&impolicy=medium"
+          />
+          <p>Home Office Furniture</p>
+        </div>
+        <div>
+          <img
+            src="https://ak1.ostkcdn.com/img/mxc/12202021_WINTER2022_FURNITURE_PopCat_6_SmallSpaceFurniture.jpg?imwidth=400&impolicy=medium"
+          />
+          <p>Small Space Furniture</p>
+        </div>
+        <div>
+          <img
+            src="https://ak1.ostkcdn.com/img/mxc/12202021_WINTER2022_FURNITURE_PopCat_7_KitchenFurniture.jpg?imwidth=400&impolicy=medium"
+          />
+          <p>Kitchen Furniture</p>
+        </div>
+        <div>
+          <img
+            src="https://ak1.ostkcdn.com/img/mxc/03242022_SPRING2022_FURNI_PopCat_9.jpg?imwidth=400&impolicy=medium"
+          />
+          <p></p>
+        </div>
+        <div>
+          <img
+            src="https://ak1.ostkcdn.com/img/mxc/03242022_SPRING2022_FURNI_PopCat_10.jpg?imwidth=400&impolicy=medium"
+          />
+          <p></p>
+        </div>
+        <div>
+          <img
+            src="https://ak1.ostkcdn.com/img/mxc/09062021_FALL2021_Furni_PopCat_11.jpg?imwidth=400&impolicy=medium"
+          />
+          <p></p>
+        </div>
+        <div>
+          <img
+            src="https://ak1.ostkcdn.com/img/mxc/03242022_SPRING2022_FURNI_PopCat_12.jpg?imwidth=400&impolicy=medium"
+          />
+          <p></p>
+        </div>
+      </div>
+      <!-- New row -->
+      <div id="Tips">
+        <div>
+          <img
+            src="https://ak1.ostkcdn.com/img/mxc/03242022_SPRING2022_FURNI_688x444_BG01.jpg?imwidth=1024&impolicy=medium"
+          />
+        </div>
+
+        <div>
+          <h2>How to Decorate With a Chaise Loung</h2>
+          <p>
+            Self-indulgent and relaxing chaise lounge chairs embody the mantra,
+            treat yourself! You may picture old Hollywood glamor or Victorian
+            parlors when you think of chaise lounges. But these luxurious long
+            chairs can neatly fit into any decor scheme, be it mid-mod or
+            farmhouse chic. Whether for the foot of your bed or a reading nook
+            in the living room, these tips will help you find a trendy chaise
+            lounge for your home.
+          </p>
+          <button>Read More</button>
+        </div>
+      </div>
+      <!-- New row -->
+      <div id="Tips">
+        <div>
+          <h2>Home Office Ideas on a Budget</h2>
+          <p>
+            Many of us are working from home for the foreseeable future - and
+            looking to keep some cash in reserve. The privacy, the
+            productivity…we’re all missing a few perks of the professional
+            workspace. These office decor tips will help you set up a productive
+            home office without breaking the bank
+          </p>
+          <button>Read More</button>
+        </div>
+        <div>
+          <img
+            src="https://ak1.ostkcdn.com/img/mxc/03242022_SPRING2022_RUGS_688x444_BG02.jpg?imwidth=1024&impolicy=medium"
+          />
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="footlinks">
+        <ul>
+          <li><h2>MY ACCOUNT</h2></li>
+          <li>Orders & Returns</li>
+          <li>Email Preferences</li>
+          <li>Account Settings</li>
+        </ul>
+        <ul>
+          <li><h2>LET US HELP</h2></li>
+          <li>Customer Care</li>
+          <li>Shipping Information</li>
+          <li>Return Policy</li>
+          <li>International Help</li>
+          <li>Accessibility</li>
+        </ul>
+        <ul>
+          <li><h2>COMPANY INFORMATION</h2></li>
+          <li>About Overstock™</li>
+          <li>Contact Us</li>
+          <li>Careers</li>
+          <li>Investors Relations</li>
+          <li>Sell Your Products</li>
+          <li>Supply Chain Transparency</li>
+        </ul>
+        <ul>
+          <li><h2>MORE WAYS TO HELP</h2></li>
+          <li>Tips & Ideas</li>
+          <li>Deals</li>
+          <li>Clearance</li>
+          <li>New Arrivals</li>
+        </ul>
+      </div>
+      <div id="endCredits">
+        <div id="address">
+          <p>© Copyright 2022, Overstock.com®, Inc.</p>
+          <p>799 Coliseum Way Midvale, UT 84047 | 1-800-843-2446</p>
+        </div>
+        <div id="additionalLinks">
+          <ul>
+            <li>Privacy Policy</li>
+            <li>Terms & Conditions</li>
+            <li>*Promotion Terms</li>
+            <li>
+              Ship To:
+              <img
+                src="https://ak1.ostkcdn.com/img/mxc/intFlag_IN.gif"
+                alt=""
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script src="./script/furniture.js"></script>
+<script src="./script/common.js"></script>
