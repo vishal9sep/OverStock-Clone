@@ -1,0 +1,26 @@
+main {
+    background-color: white;
+    padding: 40px;
+}
+#otherInfos {
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid #dadcdf;
+    padding: 20px;
+    position: sticky;
+    top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#otherInfos>div {
+    display: flex;
+    flex-direction: column;
+}
+
+#otherInfos>div>input {
+    width: 200px;
+    padding: 2px;
+    box-sizing: border-box;
+}

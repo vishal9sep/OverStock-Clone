@@ -1,0 +1,109 @@
+
+/* *{
+    border-radius: 3px;
+    font-family: Helvetica, sans-serif;
+} */
+
+#container *{
+    border-radius: 3px;
+}
+#container input{
+    border: 1px solid rgb(136, 133, 133);
+    margin: 10px 0;
+    padding: 6px;
+    box-sizing: border-box;
+    /* height: 20px; */
+}
+#container{
+    display: flex;
+    margin: auto;
+    width: fit-content;
+}
+
+main{
+    background-color: white;
+    padding-top: 20px;
+}
+
+#createAccount{
+    width: 350px;
+    padding-right: px;
+    padding-right: 50px;
+    /* border:; */
+}
+#form1{
+    border-right: 1px solid black;
+    padding-right: 50px;
+    
+}  
+#Login{
+    width: 280px;
+    padding-right: 50px;
+}
+
+#sign-email,#log-email{
+    width: 100%;
+}
+#checkBox{
+    border: .5px solid rgb(143, 137, 137);
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    font-size: small;
+    background-color: #edeff3ef;
+}
+#btn-ca{
+    width: 100%;
+    padding: 10px 0;
+    background-color: #0272a2;
+    border: 0;
+    color: white;
+    font-weight: bolder;
+}
+#name{
+    width: 100%;
+}
+#btn-cg{
+    width: 100%;
+    padding: 10px 0;
+    font-weight: bolder;
+    border: 0;
+    color: black;
+}
+#btn-si{
+    width: 100%;
+    padding: 10px 0;
+    background-color: #27865f;
+    border: 0;
+    color: white;
+    font-weight: bolder;
+}
+.control #control-p {
+    border: 0;
+}
+.control{
+    padding: 5px;
+    text-align: center;
+}
+#crt-pwd,#cfm-pwd, #log-pwd {
+    width: 100%;
+}
+#cpDiv{
+    display: flex;
+    gap : 30px
+}
+
+#cpDiv > div >span{
+    white-space: nowrap;
+}
+#secureFooter{
+    /* border: 1px solid red; */
+    margin-left: 70px;
+    font-size: smaller;
+    /* list-style: none;              */
+}
+#secureFooter  li{
+    list-style-type: none;
+    /* background-color: #ff1f2c; */
+}

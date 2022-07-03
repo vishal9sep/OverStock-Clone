@@ -1,0 +1,18 @@
+main{
+    background-color: white;
+    /* height: 200px; */
+    padding: 50px;
+}
+
+#thanks{
+    /* height: 300px; */
+    border: 1px solid black;
+    width: 60%;
+    margin: auto;
+    padding: 30px;
+    color: black;
+}
+
+main  p{
+    text-align: center;
+}

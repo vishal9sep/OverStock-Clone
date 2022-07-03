@@ -1,0 +1,29 @@
+#product{
+    width: 80%;
+    display: flex;
+    gap: 20px;
+    /* border: 1px solid black; */
+    /* width: fit-content; */
+}
+
+#product > img{
+    width: 53%;
+}
+
+main{
+    background-color: white;
+    padding: 50px 200px;
+}
+#prodInfo > p{
+    font-size: 20px;
+    
+}
+
+select{
+    width: fit-content;
+}
+#prodInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

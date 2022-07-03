@@ -1,0 +1,47 @@
+main {
+    background-color: white;
+    padding: 40px;
+}
+
+#container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+
+}
+
+#cartList {
+    width: 80%;
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#cartList>div {
+    /* width: 100%; */
+    border: 1px solid #dadcdf;
+    display: flex;
+    gap: 20px;
+}
+
+#cartList>div>img {
+    height: 100%;
+}
+
+#cartList>div>div {
+    display: flex;
+    flex-direction: column;
+}
+
+#otherInfos {
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid #dadcdf;
+    padding: 20px;
+    position: sticky;
+    top: 5px;
+}
